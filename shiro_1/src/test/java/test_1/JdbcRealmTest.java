@@ -23,6 +23,15 @@ public class JdbcRealmTest {
     public void testAuthentication(){
         JdbcRealm jdbcRealm=new JdbcRealm();
         jdbcRealm.setDataSource(datasource);
+        //权限的开关
+        jdbcRealm.setPermissionsLookupEnabled(true);
+
+        //自定义的表
+        String sql="select password from test_user where username=?";
+        jdbcRealm.setAuthenticationQuery(sql);
+
+        String roleSql="select role_name from test_user_roles where username = ?";
+        jdbcRealm.setUserRolesQuery(roleSql);
 
         //1.构建SecurityManager环境
         DefaultSecurityManager defaultSecurityManager=new DefaultSecurityManager();
@@ -36,5 +45,7 @@ public class JdbcRealmTest {
         subject.login(token);
 
         System.out.println("isAuthenticated:"+subject.isAuthenticated());
+        System.out.println("hasRole:"+subject.hasRole("admin"));
+        subject.checkPermission("user:select");
     }
 }
