@@ -39,6 +39,8 @@
                 <!--经过认证后才可访问相应的路径-->
                 /login.html=anon
                 /subLogin.form=anon
+                /testRole=roles["admin"]
+                /testRole=roles["admin"]
                 /*=authc
             </value>
         </property>
