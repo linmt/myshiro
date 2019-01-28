@@ -60,4 +60,8 @@
         <property name="hashAlgorithmName" value="md5"/>
         <property name="hashIterations" value="1"/>
     </bean>
+
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
 </beans>

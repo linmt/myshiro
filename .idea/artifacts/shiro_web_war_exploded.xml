@@ -34,6 +34,7 @@
           <element id="library" level="project" name="Maven: com.alibaba:druid:0.2.23" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.2.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.9" />
         </element>
       </element>
       <element id="directory" name="META-INF">

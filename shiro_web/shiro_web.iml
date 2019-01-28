@@ -50,5 +50,6 @@
     <orderEntry type="library" name="Maven: com.alibaba:druid:0.2.23" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:4.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.9" level="project" />
   </component>
 </module>

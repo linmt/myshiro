@@ -54,5 +54,10 @@
             <artifactId>spring-jdbc</artifactId>
             <version>4.2.4.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.9</version>
+        </dependency>
     </dependencies>
 </project>

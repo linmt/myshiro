@@ -26,4 +26,9 @@
 
     <!--排除静态文件，可以不加
     <mvc:resources mapping="/*" location="/" />-->
+
+    <aop:config proxy-target-class="true"/>
+
+    <bean class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
 </beans>
