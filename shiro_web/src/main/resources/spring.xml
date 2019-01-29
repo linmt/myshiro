@@ -39,12 +39,24 @@
                 <!--经过认证后才可访问相应的路径-->
                 /login.html=anon
                 /subLogin.form=anon
-                /testRole=roles["admin"]
-                /testRole=roles["admin"]
+                /testRole.form=roles["admin"]
+                /testRole1.form=roles["admin","admin1"]
+                /testPerms.form=perms["user:delete"]
+                /testPerms1.form=perms["user:delete","user:update"]
+                /testRole2.form=rolesOr["admin","admin1"]
                 /*=authc
             </value>
         </property>
+        <!--配置自定义filter-->
+        <property name="filters">
+            <util:map>
+                <entry key="rolesOr" value-ref="rolesOrFilter"/>
+            </util:map>
+        </property>
     </bean>
+
+    <!--配置自定义filter-->
+    <bean id="rolesOrFilter" class="com.lmt.filter.RolesOrFilter"/>
 
     <!--构建SecurityManager-->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
