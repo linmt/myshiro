@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class UserController {
-    @RequestMapping(value = "/subLogin",method = RequestMethod.POST,
-            produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/subLogin",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     @ResponseBody
     public String subLogin(User user){
         Subject subject= SecurityUtils.getSubject();

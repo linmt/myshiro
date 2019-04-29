@@ -63,6 +63,7 @@
         <!--将自定义realm设置到SecurityManager环境中-->
         <property name="realm" ref="realm"/>
         <property name="sessionManager" ref="sessionManager"/>
+        <property name="CacheManager" ref="redisCacheManager"/>
     </bean>
 
     <!--创建自定义realm-->
@@ -82,7 +83,11 @@
 
     <import resource="spring-redis.xml"/>
 
-    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+    <bean id="sessionManager" class="com.lmt.session.CustomSessionManager">
         <property name="sessionDAO" value="com.lmt.session.RedisSessionDao"/>
     </bean>
+
+    <bean class="com.lmt.session.RedisSessionDao" id="redisSessionDao"/>
+
+    <bean class="com.lmt.cache.RedisCacheManager" id="redisCacheManager"/>
 </beans>
