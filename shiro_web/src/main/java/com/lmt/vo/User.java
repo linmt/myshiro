@@ -6,6 +6,15 @@ package com.lmt.vo;
 public class User {
     private String username;
     private String password;
+    private boolean rememberMe;
+
+    public boolean isRememberMe() {
+        return rememberMe;
+    }
+
+    public void setRememberMe(boolean rememberMe) {
+        this.rememberMe = rememberMe;
+    }
 
     @Override
     public String toString() {
